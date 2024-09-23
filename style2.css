@@ -1,0 +1,276 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  color: #333333;
+}
+
+/* Title Bar Container */
+/* Title Bar Container */
+.title-bar {
+  display: flex;
+  align-items: center;
+  background-color: #004aad;
+  padding: 10px 20px;
+  color: white;
+  position: relative;
+}
+
+/* Fixed Logo */
+.title-bar .logo {
+  width: 60px; /* Adjust logo size */
+  height: auto;
+  margin-right: 20px; /* Space between logo and marquee */
+}
+.title-bar .logo {
+  width: 200px; /* Adjust logo size to your preference */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 20px; /* Space between logo and marquee */
+}
+
+/* Marquee Container */
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.marquee-container {
+  position: relative;
+  overflow: hidden;
+  height: 50px; /* Adjust height */
+}
+
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}
+
+/* Sticky Navigation Bar */
+.navbar {
+  position: sticky;
+  top: 0;
+  background-color: white;
+  padding: 10px 0;
+  z-index: 1000;
+}
+
+.navbar ul {
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+}
+
+.navbar ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+.navbar ul li a {
+  color: #004aad;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.navbar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Home Section */
+
+.home-section {
+  padding: 50px;
+  background-color: #e6f0ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1200px;
+  gap: 20px;
+}
+
+.home-image img {
+  width: 400px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #004aad;
+}
+
+.home-content {
+  flex: 1;
+}
+
+.home-content h2 {
+  color: #004aad;
+  margin-bottom: 20px;
+}
+
+.home-content p {
+  font-size: 18px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+/* Services Section */
+.services-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.services-section h2 {
+  color: #004aad;
+  font-size: 36px;
+  margin-bottom: 30px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.services-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.service-box {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box img {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.service-box h3 {
+  color: #004aad;
+  font-size: 22px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.service-box p {
+  color: #666666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.service-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Gallery Section */
+.gallery-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #e6f0ff;
+}
+/* Gallery Section */
+.gallery-row img {
+  width: 300px;
+  height: 200px;
+  margin: 0 10px;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Hover Effect */
+.gallery-row img:hover {
+  transform: scale(1.05); /* Slightly enlarge the image */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+}
+
+.gallery-section h2 {
+  color: #004aad;
+}
+
+.gallery-row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.gallery-row img {
+  width: 300px;
+  height: 200px;
+  margin: 0 10px;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+}
+
+/* Contact Section */
+.contact-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #ffffff;
+}
+
+.contact-section h2 {
+  color: #004aad;
+}
+
+.contact-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.contact-section ul li {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.contact-section ul li a {
+  color: #004aad;
+  text-decoration: none;
+}
+
+.contact-section ul li a:hover {
+  text-decoration: underline;
+}
+/* WhatsApp Button */
+.whatsapp-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  padding: 10px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.whatsapp-button a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.whatsapp-button img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}

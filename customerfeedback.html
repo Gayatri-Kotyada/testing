@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Submit Feedback</title>
+    <style>
+      /* Body and Background Styling */
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        background-color: #e0f7fa; /* Light blue background */
+      }
+
+      /* Feedback Form Container Styling */
+      .feedback-form-container {
+        max-width: 600px;
+        margin: auto;
+        padding: 30px;
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .feedback-form-container h2 {
+        text-align: center;
+        color: #00796b; /* Darker shade of blue-green */
+      }
+
+      /* Form Label and Input Styling */
+      .feedback-form-container label {
+        display: block;
+        margin-top: 15px;
+        font-size: 16px;
+        color: #00796b;
+      }
+
+      .feedback-form-container input,
+      .feedback-form-container textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+      }
+
+      /* Rating Star Styling */
+      .rating {
+        display: flex;
+        flex-direction: row-reverse; /* Reverses the display of stars */
+        justify-content: flex-start;
+        /* margin-top: 10px; */
+        margin-left: 0;
+      }
+
+      .rating input {
+        display: none; /* Hide radio buttons */
+      }
+
+      .rating label {
+        font-size: 30px;
+        color: #ccc; /* Gray color for unselected stars */
+        cursor: pointer;
+        transition: color 0.2s;
+      }
+
+      /* When a star is hovered or selected, it becomes gold */
+      .rating input:checked ~ label,
+      .rating label:hover,
+      .rating label:hover ~ label {
+        color: gold;
+      }
+
+      /* Submit Button Styling */
+      button[type="submit"] {
+        margin-top: 20px;
+        padding: 12px;
+        width: 100%;
+        background-color: #00796b; /* Blue-green submit button */
+        color: white;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+
+      button[type="submit"]:hover {
+        background-color: #004d40; /* Darker shade for hover effect */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="feedback-form-container">
+      <h2>Submit Your Feedback</h2>
+      <form id="feedback-form" onsubmit="saveFeedback(event)">
+        <label for="name">Name (optional):</label>
+        <input type="text" id="name" name="name" />
+
+        <label for="rating">Rating:</label>
+        <div class="rating">
+          <!-- Reverse the order of labels and inputs to display stars left to right -->
+          <input type="radio" id="star5" name="rating" value="5" />
+          <label for="star5" title="5 stars">★</label>
+
+          <input type="radio" id="star4" name="rating" value="4" />
+          <label for="star4" title="4 stars">★</label>
+
+          <input type="radio" id="star3" name="rating" value="3" />
+          <label for="star3" title="3 stars">★</label>
+
+          <input type="radio" id="star2" name="rating" value="2" />
+          <label for="star2" title="2 stars">★</label>
+
+          <input type="radio" id="star1" name="rating" value="1" />
+          <label for="star1" title="1 star">★</label>
+        </div>
+
+        <label for="review">Your Review:</label>
+        <textarea id="review" name="review" rows="4" required></textarea>
+
+        <button type="submit">Submit Feedback</button>
+      </form>
+    </div>
+
+    <script>
+      function saveFeedback(event) {
+        event.preventDefault();
+
+        // Get form data
+        const name = document.getElementById("name").value;
+        const service = document.getElementById("service").value;
+        const rating = document.querySelector(
+          'input[name="rating"]:checked'
+        ).value;
+        const review = document.getElementById("review").value;
+
+        // Save to localStorage
+        const feedback = { name, service, rating, review };
+        localStorage.setItem("customerFeedback", JSON.stringify(feedback));
+
+        // Redirect to feedback display page
+        window.location.href = "feedback.html";
+      }
+    </script>
+  </body>
+</html>

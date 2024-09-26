@@ -83,6 +83,14 @@ body {
   text-decoration: underline;
 }
 
+.quote-text {
+  font-size: 24px;
+  font-style: italic;
+  color: #004aad;
+  font-weight: bold;
+  margin: 0;
+}
+
 /* Home Section */
 
 .home-section {
@@ -179,75 +187,284 @@ body {
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Gallery Section */
-.gallery-section {
+/* Why Choose Us Section */
+
+.choose-us-section {
   padding: 50px;
+  background-color: #ffffff;
   text-align: center;
-  background-color: #e6f0ff;
-}
-/* Gallery Section */
-.gallery-row img {
-  width: 300px;
-  height: 200px;
-  margin: 0 10px;
-  border: 2px solid #004aad;
-  border-radius: 10px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
 
-/* Hover Effect */
-.gallery-row img:hover {
-  transform: scale(1.05); /* Slightly enlarge the image */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Add shadow for depth */
+.choose-us-section h2 {
+  color: #004aad;
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.choose-us-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  flex: 1 1 30%; /* Ensure each feature takes up 30% of the container width */
+  max-width: 350px; /* Max width for feature blocks */
+  padding: 20px;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  color: #004aad;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  font-size: 16px;
+  color: #333333;
+  line-height: 1.6;
+}
+
+
+.choose-us-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  flex: 1 1 250px;
+  padding: 20px;
+  border: 2px solid #004aad;
+  border-radius: 10px;
+  background-color: #f9f9f9;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.feature:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.feature img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  color: #004aad;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.feature p {
+  color: #333333;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+
+/* Gallery Section */
+
+.gallery-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
 }
 
 .gallery-section h2 {
   color: #004aad;
+  font-size: 36px;
+  margin-bottom: 30px;
 }
 
-.gallery-row {
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Four columns */
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 200px; /* Fixed height for the gallery items */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%; /* Ensures all images fill the item container */
+  object-fit: cover; /* Maintains aspect ratio and fills the container */
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+.gallery-item p {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 74, 173, 0.7); /* Semi-transparent background */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  margin: 0;
+}
+/* Customer Reviews Section */
+.reviews-section {
+  padding: 50px;
+  text-align: center;
+  background-color: #f2f2f2; /* Light grey background for reviews */
+}
+
+.reviews-section h2 {
+  color: #004aad;
+  margin-bottom: 30px;
+}
+
+.reviews-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.gallery-row img {
-  width: 300px;
-  height: 200px;
-  margin: 0 10px;
+.review-card {
+  background-color: white;
   border: 2px solid #004aad;
   border-radius: 10px;
+  padding: 20px;
+  max-width: 300px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.review-text {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.review-author {
+  font-weight: bold;
+  color: #004aad;
+  font-size: 14px;
+}
+
 
 /* Contact Section */
 .contact-section {
   padding: 50px;
   text-align: center;
-  background-color: #ffffff;
+  background-color:#e6f0ff; /* White background for contact section */
 }
 
 .contact-section h2 {
   color: #004aad;
+  margin-bottom: 30px;
 }
 
-.contact-section ul {
+.contact-section p {
+  font-size: 16px;
+  color: #333333;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.contact-form label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  background-color: #004aad;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.contact-form button:hover {
+  background-color: #003b82;
+}
+
+.contact-details {
   list-style-type: none;
   padding: 0;
 }
 
-.contact-section ul li {
+.contact-details li {
   font-size: 18px;
   margin: 10px 0;
+  color: #004aad;
 }
 
-.contact-section ul li a {
+.contact-details li a {
   color: #004aad;
   text-decoration: none;
 }
 
-.contact-section ul li a:hover {
+.contact-details li a:hover {
   text-decoration: underline;
 }
+
+/* Responsive styling for reviews and contact sections */
+@media (max-width: 768px) {
+  .reviews-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 /* WhatsApp Button */
 .whatsapp-button {
   position: fixed;
@@ -274,3 +491,4 @@ body {
   height: 30px;
   margin-right: 10px;
 }
+
